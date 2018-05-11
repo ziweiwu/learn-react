@@ -1,28 +1,29 @@
 console.log('App.js is running!');
 
-var app = {
+const app = {
   title: 'Great app',
   subtitle: 'This is a great app'
 }
 
-var user1 = {
+const user1 = {
   name: 'ziwei',
 }
 
-var user2 = {
+const user2 = {
   name: 'John Doe',
   location: 'Toronto',
-  favoriteFood:'Italian',
+  favoriteFood: 'Italian',
   options: ['One', 'Two']
 }
+
 
 function getLocation(location) {
   //tertiary operator
   //state return if true : if false
-  return location? location :'unknown';
+  return location ? location : 'unknown';
 }
 
-var template2 = (
+const template = (
   <div>
     <h1>
       {app.title}
@@ -38,7 +39,7 @@ var template2 = (
         location: {getLocation(user1.location)}
       </p>
       {user1.favoriteFood
-      &&<p>favorite food: {user1.favoriteFood}</p> }
+      && <p>favorite food: {user1.favoriteFood}</p>}
     </div>
     <hr/>
     <div>
@@ -49,10 +50,10 @@ var template2 = (
         location: {getLocation(user2.location)}
       </p>
       {user2.favoriteFood
-      &&<p>favorite food: {user2.favoriteFood}</p> }
+      && <p>favorite food: {user2.favoriteFood}</p>}
     </div>
   </div>
 )
 
-var appRoot = document.getElementById('app');
-ReactDOM.render(template2, appRoot);
+const appRoot = document.getElementById('app');
+ReactDOM.render(template, appRoot);

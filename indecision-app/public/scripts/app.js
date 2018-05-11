@@ -1,88 +1,25 @@
-'use strict';
+"use strict";
 
-console.log('App.js is running!');
+//use arrow function, you can skip using {return x*y*z}
+var power = function power(x, y, z) {
+  return x * y * z;
+};
+console.log(power(2, 2, 3));
 
-var app = {
-  title: 'Great app',
-  subtitle: 'This is a great app'
+//get first name
+var name = "Ziwei Wu";
+//use arrow function to create getFirstName function
+var getFirstName = function getFirstName(name) {
+  return name.split(" ")[0];
+};
+var getLastName = function getLastName(name) {
+  return name.split(" ")[1];
 };
 
-var user1 = {
-  name: 'ziwei'
+console.log(getFirstName(name));
+console.log(getLastName(name));
+
+var add = function add(a, b) {
+  return a * b;
 };
-
-var user2 = {
-  name: 'John Doe',
-  location: 'Toronto',
-  favoriteFood: 'Italian',
-  options: ['One', 'Two']
-};
-
-function getLocation(location) {
-  //tertiary operator
-  //state return if true : if false
-  return location ? location : 'unknown';
-}
-
-var template2 = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    app.title
-  ),
-  React.createElement(
-    'h2',
-    null,
-    app.subtitle
-  ),
-  React.createElement(
-    'div',
-    null,
-    React.createElement(
-      'p',
-      null,
-      'name: ',
-      user1.name.toUpperCase()
-    ),
-    React.createElement(
-      'p',
-      null,
-      'location: ',
-      getLocation(user1.location)
-    ),
-    user1.favoriteFood && React.createElement(
-      'p',
-      null,
-      'favorite food: ',
-      user1.favoriteFood
-    )
-  ),
-  React.createElement('hr', null),
-  React.createElement(
-    'div',
-    null,
-    React.createElement(
-      'p',
-      null,
-      'name: ',
-      user2.name.toUpperCase()
-    ),
-    React.createElement(
-      'p',
-      null,
-      'location: ',
-      getLocation(user2.location)
-    ),
-    user2.favoriteFood && React.createElement(
-      'p',
-      null,
-      'favorite food: ',
-      user2.favoriteFood
-    )
-  )
-);
-
-var appRoot = document.getElementById('app');
-ReactDOM.render(template2, appRoot);
+console.log(add(55, 1));
